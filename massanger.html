@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Messenger</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+</head>
+
+<body class="light">
+
+<div id="login">
+  <h2>Messenger</h2>
+  <button onclick="googleLogin()">Login with Gmail</button>
+</div>
+
+<div id="app" class="hidden">
+
+  <div class="sidebar">
+    <div class="profile">
+      <img id="profilePic">
+      <p id="username"></p>
+      <input type="file" onchange="uploadProfile(this)">
+    </div>
+
+    <select onchange="changeTheme(this.value)">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+      <option value="cartoon">Cartoon</option>
+    </select>
+
+    <h3>Users</h3>
+    <ul id="userList"></ul>
+  </div>
+
+  <div class="chat">
+    <div id="messages"></div>
+
+    <div class="emoji">
+      😀 😁 😂 🤣 😍 😎 😡 😭 🥳 ❤️ 👍 🙏 💯 🔥 🎉 😜 😇 🤖 👀
+    </div>
+
+    <div class="inputBox">
+      <input id="msg" placeholder="Type a message">
+      <button onclick="sendMsg()">Send</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
